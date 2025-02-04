@@ -35,12 +35,19 @@ export default function Hero() {
               <span>•</span>
               <span>⚡ Dries Under 1 Hour</span>
             </div>
+            <div className="mt-4">
+              <img 
+                src="/assets/Pets.png" 
+                alt="Pet-friendly cleaning services"
+                className="h-24 object-contain"
+              />
+            </div>
           </div>
-          <div className="relative aspect-video md:aspect-square">
+          <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac"
-              alt="Professional eco-friendly carpet cleaning"
-              className="rounded-lg object-cover w-full h-full"
+              src="/assets/DALL·E 2025-02-03 20.59.37.webp"
+              alt="Organic Carpet Mechanic Professional"
+              className="rounded-lg w-full"
             />
           </div>
         </div>
