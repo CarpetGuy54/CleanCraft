@@ -16,6 +16,7 @@ const bookingSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Valid phone number required"),
   service: z.string().min(1, "Please select a service"),
+  propertyType: z.string().min(1, "Please select property type"),
   message: z.string().optional(),
 });
 
@@ -31,6 +32,7 @@ export default function Book() {
       email: "",
       phone: "",
       service: "",
+      propertyType: "",
       message: "",
     },
   });
@@ -116,10 +118,34 @@ export default function Book() {
 
                 <FormField
                   control={form.control}
+                  name="propertyType"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Property Type</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select property type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="residential">Residential Home</SelectItem>
+                          <SelectItem value="apartment">Apartment</SelectItem>
+                          <SelectItem value="business">Business/Office</SelectItem>
+                          <SelectItem value="property-management">Property Management</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
                   name="service"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Service</FormLabel>
+                      <FormLabel>Service Needed</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -127,9 +153,11 @@ export default function Book() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
-                          <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>
-                          <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
+                          <SelectItem value="carpet">Carpet Cleaning</SelectItem>
+                          <SelectItem value="floor">Wood/Tile Floor Cleaning</SelectItem>
+                          <SelectItem value="upholstery">Upholstery Cleaning</SelectItem>
+                          <SelectItem value="rug">Rug Cleaning</SelectItem>
+                          <SelectItem value="commercial">Commercial Cleaning</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -145,7 +173,7 @@ export default function Book() {
                       <FormLabel>Additional Details</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us more about your cleaning needs"
+                          placeholder="Tell us about your cleaning needs (e.g., number of rooms, special requirements, preferred timing)"
                           {...field}
                         />
                       </FormControl>
