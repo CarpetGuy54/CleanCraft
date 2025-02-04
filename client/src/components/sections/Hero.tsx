@@ -45,7 +45,7 @@ export default function Hero() {
           </div>
           <div className="relative">
             <img
-              src="/assets/carpet guy.png"
+              src="/assets/carpet-guy.png"
               alt="Professional carpet cleaning service"
               className="rounded-lg w-full"
             />
