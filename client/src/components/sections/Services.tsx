@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles, Spray, Sofa, Shield } from "lucide-react";
+import { Sparkles, Brush, Sofa, Shield } from "lucide-react";
 
 const services = [
   {
@@ -10,7 +10,7 @@ const services = [
   {
     title: "Carpet Cleaning",
     description: "Professional carpet cleaning that removes deep-seated dirt and stains.",
-    icon: Spray,
+    icon: Brush,
   },
   {
     title: "Upholstery Cleaning",
