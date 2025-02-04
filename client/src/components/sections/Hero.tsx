@@ -8,10 +8,10 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Professional Cleaning Services You Can Trust
+              Eco-Friendly Carpet Cleaning for a Healthier Home
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              Experience the difference with our expert cleaning services. From homes to offices, we deliver spotless results every time.
+              Experience the power of organic cleaning solutions. We remove stains, allergens, and dirt while protecting your family and the environment.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/book">
@@ -25,11 +25,18 @@ export default function Hero() {
                 </Button>
               </Link>
             </div>
+            <div className="mt-6 text-sm text-gray-600 flex items-center gap-2">
+              <span>🌿 100% Organic Solutions</span>
+              <span>•</span>
+              <span>🏠 Safe for Family & Pets</span>
+              <span>•</span>
+              <span>⚡ Fast-Drying Process</span>
+            </div>
           </div>
           <div className="relative aspect-video md:aspect-square">
             <img
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
-              alt="Clean modern living room"
+              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac"
+              alt="Professional eco-friendly carpet cleaning"
               className="rounded-lg object-cover w-full h-full"
             />
           </div>
