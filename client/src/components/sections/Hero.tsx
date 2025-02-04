@@ -7,11 +7,14 @@ export default function Hero() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
+            <div className="inline-block bg-primary/10 text-primary font-semibold px-4 py-2 rounded-full mb-4">
+              Only $35 Per Room!
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Eco-Friendly Carpet Cleaning for a Healthier Home
+              Refresh Your Home, Protect What Matters Most
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              Experience the power of organic cleaning solutions. We remove stains, allergens, and dirt while protecting your family and the environment.
+              Experience organic carpet cleaning that's safe for your family, pets, and the planet. Professional results with natural solutions.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/book">
@@ -19,18 +22,18 @@ export default function Hero() {
                   Get Free Estimate
                 </Button>
               </Link>
-              <Link href="/services">
+              <a href="tel:2086918565">
                 <Button size="lg" variant="outline" className="text-lg">
-                  Our Services
+                  (208) 691-8565
                 </Button>
-              </Link>
+              </a>
             </div>
-            <div className="mt-6 text-sm text-gray-600 flex items-center gap-2">
-              <span>🌿 100% Organic Solutions</span>
+            <div className="mt-6 text-sm text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span>🌿 Non-toxic Solutions</span>
               <span>•</span>
-              <span>🏠 Safe for Family & Pets</span>
+              <span>🐾 Pet Friendly</span>
               <span>•</span>
-              <span>⚡ Fast-Drying Process</span>
+              <span>⚡ Dries Under 1 Hour</span>
             </div>
           </div>
           <div className="relative aspect-video md:aspect-square">

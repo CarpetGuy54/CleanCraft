@@ -20,8 +20,21 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      <footer className="bg-gray-50 py-8 text-center text-sm text-gray-600">
-        <p>© 2024 SparkleClean. All rights reserved.</p>
+      <footer className="bg-gray-50 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-4">
+            <a href="tel:2086918565" className="text-primary hover:text-primary/80 font-semibold">
+              (208) 691-8565
+            </a>
+            <p className="text-sm text-gray-600 mt-2">
+              Post Falls, Idaho 83854
+            </p>
+            <a href="mailto:OrganicCarpetGuy@gmail.com" className="text-sm text-gray-600 hover:text-primary">
+              OrganicCarpetGuy@gmail.com
+            </a>
+          </div>
+          <p className="text-sm text-gray-500">© 2024 Organic Carpet Mechanic. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
