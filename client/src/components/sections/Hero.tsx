@@ -45,8 +45,8 @@ export default function Hero() {
           </div>
           <div className="relative">
             <img
-              src="/assets/DALL·E 2025-02-03 20.59.37.webp"
-              alt="Organic Carpet Mechanic Professional"
+              src="/assets/DALL·E 2025-02-03 21.17.24.webp"
+              alt="Professional carpet cleaning service"
               className="rounded-lg w-full"
             />
           </div>
