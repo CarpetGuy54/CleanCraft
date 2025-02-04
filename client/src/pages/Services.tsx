@@ -6,7 +6,7 @@ const services = [
   {
     title: "Residential Carpet Cleaning",
     description: "Comprehensive carpet cleaning for homes and apartments using eco-friendly solutions. Removes stains, allergens, and dirt while being safe for your family and pets.",
-    price: "$35 per room",
+    price: "$35 per bedroom",
     icon: "🏠",
   },
   {

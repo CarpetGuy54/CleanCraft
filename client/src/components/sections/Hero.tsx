@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block bg-primary/10 text-primary font-semibold px-4 py-2 rounded-full mb-4">
-              Only $35 Per Room!
+              Only $35 Per Bedroom!
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Refresh Your Home, Protect What Matters Most

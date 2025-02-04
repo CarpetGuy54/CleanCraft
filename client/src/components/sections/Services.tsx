@@ -31,7 +31,7 @@ export default function Services() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl font-bold">Our Services</h2>
           <p className="mt-4 text-gray-600">
-            Professional floor cleaning services at just $35 per room
+            Professional floor cleaning services at just $35 per bedroom
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
