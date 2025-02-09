@@ -3,8 +3,8 @@ import { Sparkles, Timer, Leaf, Heart } from "lucide-react";
 
 const services = [
   {
-    title: "Essential Oil Scents",
-    description: "Choose from Peppermint, Lavender, Eucalyptus, Lemongrass, or Orange essential oils for a natural, refreshing scent.",
+    title: "Quiet Cleaning Process",
+    description: "Our disruption-free cleaning process lets you continue your day while we refresh your space.",
     icon: Leaf,
   },
   {
@@ -13,13 +13,13 @@ const services = [
     icon: Timer,
   },
   {
-    title: "Multiple Surface Cleaning",
-    description: "Professional cleaning for carpets, wood floors, tile, rugs, and upholstery - all with our non-toxic approach.",
+    title: "Improved Air Quality",
+    description: "We don't just clean what you see - we eliminate hidden odors and allergens, improving your overall air quality.",
     icon: Sparkles,
   },
   {
-    title: "Safe for Everyone",
-    description: "Our non-toxic solutions are perfect for homes with kids, pets, and allergy-sensitive individuals. Experience a healthier clean!",
+    title: "Essential Oil Options",
+    description: "Choose from Peppermint, Lavender, Eucalyptus, Lemongrass, or Orange essential oils for a lasting fresh scent.",
     icon: Heart,
   },
 ];
@@ -31,7 +31,7 @@ export default function Services() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl font-bold">Our Services</h2>
           <p className="mt-4 text-gray-600">
-            Professional floor cleaning services at just $35 per bedroom
+            Professional carpet cleaning that removes hidden odors and refreshes your space
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -11,10 +11,10 @@ export default function Hero() {
               Only $35 Per Bedroom!
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Deep Clean, Non-Toxic Freshness
+              Don't Get Caught Being Nose Blind!
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              Experience powerful carpet cleaning with our non-toxic solutions. Safe for kids, pets, and those with allergies, while delivering professional-grade results.
+              You might not notice it, but your guests do. Our quiet, non-toxic carpet cleaning removes hidden odors and improves air quality, making your space truly fresh and inviting.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/book">
@@ -31,7 +31,7 @@ export default function Hero() {
             <div className="mt-6 text-sm text-gray-600 flex flex-wrap items-center gap-x-4 gap-y-2">
               <span>🌿 Non-toxic Solutions</span>
               <span>•</span>
-              <span>🐾 Pet Friendly</span>
+              <span>🤫 Quiet Process</span>
               <span>•</span>
               <span>⚡ Dries Under 1 Hour</span>
             </div>
