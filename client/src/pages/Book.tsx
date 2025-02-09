@@ -4,12 +4,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { apiRequest } from "@/lib/queryClient";
-import { useMutation } from "@tanstack/react-query";
 
 const bookingSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -23,8 +20,6 @@ const bookingSchema = z.object({
 type BookingForm = z.infer<typeof bookingSchema>;
 
 export default function Book() {
-  const { toast } = useToast();
-
   const form = useForm<BookingForm>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
@@ -37,28 +32,18 @@ export default function Book() {
     },
   });
 
-  const bookingMutation = useMutation({
-    mutationFn: async (data: BookingForm) => {
-      await apiRequest("POST", "/api/bookings", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Booking request received!",
-        description: "We'll contact you shortly to confirm your appointment.",
-      });
-      form.reset();
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "There was a problem submitting your request. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
   function onSubmit(data: BookingForm) {
-    bookingMutation.mutate(data);
+    const subject = `New Booking Request from ${data.name}`;
+    const body = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Service: ${data.service}
+Property Type: ${data.propertyType}
+Additional Details: ${data.message || 'No additional details provided'}
+    `.trim();
+
+    window.location.href = `mailto:OrganicCarpetGuy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -182,12 +167,8 @@ export default function Book() {
                   )}
                 />
 
-                <Button
-                  type="submit"
-                  className="w-full"
-                  disabled={bookingMutation.isPending}
-                >
-                  {bookingMutation.isPending ? "Submitting..." : "Submit Request"}
+                <Button type="submit" className="w-full">
+                  Submit Request
                 </Button>
               </form>
             </Form>
