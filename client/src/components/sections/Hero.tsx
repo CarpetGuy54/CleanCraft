@@ -11,10 +11,10 @@ export default function Hero() {
               Only $35 Per Bedroom!
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Refresh Your Home, Protect What Matters Most
+              Deep Clean, Non-Toxic Freshness
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              Experience organic carpet cleaning that's safe for your family, pets, and the planet. Professional results with natural solutions.
+              Experience powerful carpet cleaning without harsh chemicals. Our organic solutions are safe for kids, pets, and those with allergies, while delivering professional-grade results.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/book">

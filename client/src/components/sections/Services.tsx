@@ -3,13 +3,13 @@ import { Sparkles, Timer, Leaf, Heart } from "lucide-react";
 
 const services = [
   {
-    title: "Non-Toxic Cleaning",
-    description: "Natural, organic essential oils blended into our cleaning solutions. Choose from Peppermint, Lavender, Eucalyptus, Lemongrass, and Orange.",
+    title: "Organic Essential Oils",
+    description: "Choose from Peppermint, Lavender, Eucalyptus, Lemongrass, or Orange essential oils for a natural, refreshing scent that's safe for everyone.",
     icon: Leaf,
   },
   {
     title: "Fast-Drying Process",
-    description: "Our efficient cleaning process ensures your floors dry in under an hour, minimizing disruption to your daily routine.",
+    description: "Get back to your routine quickly - our efficient cleaning process ensures your carpets dry in under an hour.",
     icon: Timer,
   },
   {
@@ -18,8 +18,8 @@ const services = [
     icon: Sparkles,
   },
   {
-    title: "Pet & Planet Friendly",
-    description: "Safe for all family members - including your pets. Our organic solutions protect both your home and the environment.",
+    title: "Safe for Everyone",
+    description: "Our non-toxic solutions are perfect for homes with kids, pets, and allergy-sensitive individuals. Experience a healthier clean!",
     icon: Heart,
   },
 ];
