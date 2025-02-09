@@ -3,8 +3,8 @@ import { Sparkles, Timer, Leaf, Heart } from "lucide-react";
 
 const services = [
   {
-    title: "Organic Essential Oils",
-    description: "Choose from Peppermint, Lavender, Eucalyptus, Lemongrass, or Orange essential oils for a natural, refreshing scent that's safe for everyone.",
+    title: "Essential Oil Scents",
+    description: "Choose from Peppermint, Lavender, Eucalyptus, Lemongrass, or Orange essential oils for a natural, refreshing scent.",
     icon: Leaf,
   },
   {
@@ -14,7 +14,7 @@ const services = [
   },
   {
     title: "Multiple Surface Cleaning",
-    description: "Professional cleaning for carpets, wood floors, tile, rugs, and upholstery - all with our eco-friendly approach.",
+    description: "Professional cleaning for carpets, wood floors, tile, rugs, and upholstery - all with our non-toxic approach.",
     icon: Sparkles,
   },
   {

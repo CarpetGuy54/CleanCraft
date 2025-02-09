@@ -14,7 +14,7 @@ export default function Hero() {
               Deep Clean, Non-Toxic Freshness
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              Experience powerful carpet cleaning without harsh chemicals. Our organic solutions are safe for kids, pets, and those with allergies, while delivering professional-grade results.
+              Experience powerful carpet cleaning with our non-toxic solutions. Safe for kids, pets, and those with allergies, while delivering professional-grade results.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/book">
