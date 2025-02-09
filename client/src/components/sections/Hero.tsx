@@ -11,10 +11,10 @@ export default function Hero() {
               Only $35 Per Bedroom!
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Don't Get Caught Being Nose Blind!
+              A Clean Space Speaks Before You Do
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              You might not notice it, but your guests do. Our quiet, non-toxic carpet cleaning removes hidden odors and improves air quality, making your space truly fresh and inviting.
+              The moment someone walks into your home or office, they notice the air quality and smell before anything else. Our non-toxic, ultra-quiet carpet cleaning removes hidden odors and improves air quality.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/book">
@@ -32,6 +32,8 @@ export default function Hero() {
               <span>🌿 Non-toxic Solutions</span>
               <span>•</span>
               <span>🤫 Quiet Process</span>
+              <span>•</span>
+              <span>🐾 Pet Friendly</span>
               <span>•</span>
               <span>⚡ Dries Under 1 Hour</span>
             </div>
