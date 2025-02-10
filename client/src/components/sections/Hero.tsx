@@ -11,7 +11,7 @@ export default function Hero() {
               Only $35 Per Bedroom!
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              A Clean Space Speaks Before You Do
+              Carpet Cleaning, Redefined – Non-Toxic, Quiet, and Refreshingly Effective!
             </h1>
             <p className="mt-6 text-xl text-gray-600">
               The moment someone walks into your home or office, they notice the air quality and smell before anything else. Our non-toxic, ultra-quiet carpet cleaning removes hidden odors and improves air quality.
