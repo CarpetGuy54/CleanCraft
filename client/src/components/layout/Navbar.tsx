@@ -11,14 +11,14 @@ export default function Navbar() {
   const NavLinks = () => (
     <>
       <Link href="/">
-        <a className={`text-lg ${location === "/" ? "text-primary" : "text-gray-700"} hover:text-primary`}>
+        <span className={`text-lg ${location === "/" ? "text-primary" : "text-gray-700"} hover:text-primary cursor-pointer`}>
           Home
-        </a>
+        </span>
       </Link>
       <Link href="/services">
-        <a className={`text-lg ${location === "/services" ? "text-primary" : "text-gray-700"} hover:text-primary`}>
+        <span className={`text-lg ${location === "/services" ? "text-primary" : "text-gray-700"} hover:text-primary cursor-pointer`}>
           Services
-        </a>
+        </span>
       </Link>
       <Link href="/book">
         <Button>Get Free Estimate</Button>
@@ -27,12 +27,12 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <nav className="bg-white shadow">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-bold text-primary flex items-center gap-2">
+          <span className="text-xl font-bold text-primary cursor-pointer">
             🌿 Organic Carpet Mechanic
-          </a>
+          </span>
         </Link>
 
         {isMobile ? (
