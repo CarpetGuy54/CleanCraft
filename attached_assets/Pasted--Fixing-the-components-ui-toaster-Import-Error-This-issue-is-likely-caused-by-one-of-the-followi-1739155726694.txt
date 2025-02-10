@@ -1,0 +1,91 @@
+🚀 Fixing the @/components/ui/toaster Import Error
+This issue is likely caused by one of the following reasons:
+
+The alias @ is not correctly resolving.
+The import path is incorrect or the file is missing.
+The toaster.tsx file exists, but there is a case sensitivity issue (e.g., Toaster.tsx vs. toaster.tsx).
+✅ 1. Verify the toaster.tsx File Exists
+Run:
+
+bash
+Copy
+Edit
+ls client/src/components/ui/
+If you see toaster.tsx, move to Step 2.
+If it’s missing, rename toast.tsx to toaster.tsx if that was intended:
+bash
+Copy
+Edit
+mv client/src/components/ui/toast.tsx client/src/components/ui/toaster.tsx
+✅ 2. Ensure the Correct Import Path in App.tsx
+Open client/src/App.tsx and modify the import statement to match the correct file structure.
+
+Try:
+
+tsx
+Copy
+Edit
+import Toaster from "./components/ui/toaster";  // Try without `@/`
+OR
+
+tsx
+Copy
+Edit
+import Toaster from "@/components/ui/toaster";  // Keep the alias if `@` is correctly set
+If Vite still cannot find the file, move to Step 3.
+✅ 3. Fix Alias in vite.config.ts
+Your alias @ may not be resolving correctly. Open vite.config.ts and make sure the alias is properly configured:
+
+typescript
+Copy
+Edit
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "client/src"), // Ensures `@` points to `client/src`
+    },
+  },
+  root: __dirname, // Ensures correct root path
+  build: {
+    outDir: path.resolve(__dirname, "dist/public"),
+    emptyOutDir: true,
+  },
+  publicDir: path.resolve(__dirname, "public"),
+});
+Save the file.
+
+Now rebuild your project:
+
+bash
+Copy
+Edit
+rm -rf dist
+npm run build
+If npm run build still fails, move to Step 4.
+
+✅ 4. Force Install Dependencies (If Still Failing)
+If the error persists, force reinstall dependencies:
+
+bash
+Copy
+Edit
+rm -rf node_modules package-lock.json
+npm install
+Then rebuild:
+
+bash
+Copy
+Edit
+npm run build
+🚀 Final Steps
+If the import error disappears, redeploy in Replit.
+If npm run build still fails, copy the error message here.
