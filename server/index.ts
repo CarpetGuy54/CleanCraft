@@ -96,13 +96,24 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // Serve static files in development or production
+  // Serve static files for both development and production
+  // First serve from the public directory for development assets
+  app.use('/public', express.static(path.join(__dirname, '../client/public'), {
+    maxAge: '1d',
+    etag: true,
+    lastModified: true
+  }));
+
+  // Then serve from dist/public for production builds
+  app.use(express.static(path.join(__dirname, '../dist/public'), {
+    maxAge: '1d',
+    etag: true,
+    lastModified: true
+  }));
+
   if (process.env.NODE_ENV === 'development') {
     await setupVite(app, server);
   } else {
-    // Serve static files from the dist/public directory
-    app.use(express.static(path.join(__dirname, '../dist/public')));
-
     // Handle all routes by serving index.html (for client-side routing)
     app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '../dist/public/index.html'));
