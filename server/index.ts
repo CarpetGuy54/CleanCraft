@@ -1,6 +1,12 @@
 import express, { type Request, Response, NextFunction } from "express";
+import path from "path";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { setupVite, log } from "./vite";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 app.use(express.json());
@@ -20,23 +26,28 @@ app.use((req, res, next) => {
     host.match(new RegExp(allowed.replace('*', '.*')))
   );
 
-  if (isAllowedOrigin) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
-
   // Set comprehensive CORS headers
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Max-Age', '86400'); // 24 hours
 
+  if (isAllowedOrigin) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
   // Handle preflight requests
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  // Block requests from unauthorized hosts
-  if (!isAllowedOrigin && !isAllowedHost && process.env.NODE_ENV === 'development') {
+  // In development, allow all hosts to prevent Vite host blocking
+  if (process.env.NODE_ENV === 'development') {
+    return next();
+  }
+
+  // In production, enforce host restrictions
+  if (!isAllowedOrigin && !isAllowedHost) {
     return res.status(403).json({
       error: 'Host not allowed',
       allowedHosts
@@ -85,10 +96,17 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  if (app.get("env") === "development") {
+  // Serve static files in development or production
+  if (process.env.NODE_ENV === 'development') {
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // Serve static files from the dist/public directory
+    app.use(express.static(path.join(__dirname, '../dist/public')));
+
+    // Handle all routes by serving index.html (for client-side routing)
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../dist/public/index.html'));
+    });
   }
 
   const PORT = parseInt(process.env.PORT || "5000", 10);
