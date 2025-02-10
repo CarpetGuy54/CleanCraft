@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path, { dirname } from "path";
@@ -8,13 +9,18 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  root: __dirname, // Set root to main directory
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "client/src")
+    },
+  },
+  root: __dirname,
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, "client/index.html"), // Make sure Vite finds index.html
+      input: path.resolve(__dirname, "client/index.html"),
     },
   },
-  publicDir: path.resolve(__dirname, "public"), // Ensure static assets are included
+  publicDir: path.resolve(__dirname, "public"),
 });
