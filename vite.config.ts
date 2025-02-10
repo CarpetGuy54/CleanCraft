@@ -21,3 +21,16 @@ export default defineConfig({
     emptyOutDir: true,
   },
 });
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  build: {
+    outDir: 'dist/public', // Ensure build output goes to dist/public
+    emptyOutDir: true,
+  },
+  server: {
+    open: true, // Automatically opens in Replit preview
+  },
+  publicDir: 'public', // Ensure static assets are placed correctly
+});
+
