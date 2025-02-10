@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
@@ -7,6 +8,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 export default defineConfig({
   plugins: [react(), runtimeErrorOverlay(), themePlugin()],
   resolve: {
@@ -20,17 +22,8 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
-});
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  build: {
-    outDir: 'dist/public', // Ensure build output goes to dist/public
-    emptyOutDir: true,
-  },
   server: {
-    open: true, // Automatically opens in Replit preview
+    open: true,
   },
-  publicDir: 'public', // Ensure static assets are placed correctly
+  publicDir: 'public'
 });
-
