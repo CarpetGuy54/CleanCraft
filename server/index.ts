@@ -6,6 +6,25 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Add CORS headers for development
+app.use((req, res, next) => {
+  // Allow Replit domain and localhost
+  const allowedOrigins = ['https://*.replit.dev', 'http://localhost:5000'];
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.some(allowed => origin.match(new RegExp(allowed.replace('*', '.*'))))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -58,8 +77,10 @@ app.use((req, res, next) => {
 
   // ALWAYS serve the app on port 5000
   // this serves both the API and the client
-  const PORT = 5000;
-  server.listen(PORT, "0.0.0.0", () => {
-    log(`serving on port ${PORT}`);
+  const PORT = process.env.PORT || 5000;
+  const HOST = process.env.HOST || '0.0.0.0';
+
+  server.listen(PORT, HOST, () => {
+    log(`serving on ${HOST}:${PORT}`);
   });
 })();
