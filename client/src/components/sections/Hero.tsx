@@ -39,7 +39,7 @@ export default function Hero() {
             </div>
             <div className="mt-4">
               <img 
-                src="/assets/Pets.png" 
+                src="/client/public/assets/Pets.png" 
                 alt="Pet-friendly cleaning services"
                 className="h-24 object-contain"
               />
@@ -47,7 +47,7 @@ export default function Hero() {
           </div>
           <div className="relative">
             <img
-              src="/assets/carpet-guy.png"
+              src="/client/public/assets/carpet-guy.png"
               alt="Professional carpet cleaning service"
               className="rounded-lg w-full"
             />

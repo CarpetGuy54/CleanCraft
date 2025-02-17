@@ -98,7 +98,12 @@ app.use((req, res, next) => {
 
   // Serve static files for both development and production
   // First serve from the public directory for development assets
-  app.use('/public', express.static(path.join(__dirname, '../client/public'), {
+  app.use('/client/public', express.static(path.join(__dirname, '../client/public'), {
+    maxAge: '1d',
+    etag: true,
+    lastModified: true
+  }));
+    app.use('/client/assets', express.static(path.join(__dirname, '../client/assets'), {
     maxAge: '1d',
     etag: true,
     lastModified: true
